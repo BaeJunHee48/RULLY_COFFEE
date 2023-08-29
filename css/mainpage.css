@@ -40,16 +40,16 @@ body {
   padding: 0 20px;
 }
 /* 사이드 버튼 */
-.side-btn{
+.side-btn {
   width: 50px;
   height: 150px;
   z-index: 9999;
   position: fixed;
   display: block;
-  top: 50%;
+  bottom: 2%;
   right: 0;
 }
-.side-menu{
+.side-up {
   width: 50px;
   height: 50px;
   display: flex;
@@ -57,33 +57,22 @@ body {
   align-items: center;
   font-size: 30px;
   text-align: center;
-  background-color: #2a2a2a;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+  margin-bottom: 5px;
 }
-.side-up{
+.side-down {
   width: 50px;
   height: 50px;
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
   text-align: center;
   background-color: #fff;
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
-  border-radius: 50%;
-  cursor: pointer;
-}
-.side-down{
-  width: 50px;
-  height: 50px;
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -177,8 +166,9 @@ body {
     padding-left: 30px;
   }
   .inner .logo img {
+    position: relative;
     width: 60%;
-    top: -5px;
+    top: -10px;
   }
   .nav ul {
     padding-right: 50px;
@@ -195,8 +185,10 @@ body {
   }
 }
 @media all and (max-width: 768px) {
-  .nav ul li a {
-    display: none;
+  .inner .logo img {
+    position: relative;
+    width: 90%;
+    top: -8px;
   }
   .sub-menu {
     display: block;
@@ -266,10 +258,9 @@ body {
   font-size: 0.6em;
   text-align: center;
 }
-.visimg {
+.visimg{
   width: 500px;
   height: 500px;
-  margin-right: 80px;
 }
 @media all and (max-width: 1024px) {
   .visual-txt h1 {
@@ -299,10 +290,6 @@ body {
   .visimg {
     width: 400px;
     height: 400px;
-  }
-  .visimg {
-    width: 350px;
-    height: 350px;
   }
 }
 @media all and (max-width: 768px) {
@@ -337,7 +324,7 @@ body {
   }
 }
 /* 메뉴 */
-.menu{
+.menu {
   max-width: 1400px;
   width: 100%;
   height: 750px;
@@ -350,12 +337,12 @@ body {
   height: 250px;
   cursor: pointer;
 }
-.menu-title{
+.menu-title {
   font-size: 80px;
   font-weight: 900;
-  padding:100px 0 60px 0;
+  padding: 100px 0 60px 0;
 }
-.menu-left li{
+.menu-left li {
   width: 25%;
   font-size: 36px;
   color: #cdc6c6;
@@ -363,31 +350,242 @@ body {
   padding-bottom: 30px;
   padding-left: 40px;
 }
-.menu-right{
+.menu-right {
   position: relative;
   float: right;
   width: 60%;
   top: -250px;
   overflow: hidden;
 }
-.menu-right .swiper-slide:focus > img{
-  width: 300px;
-  height: 300px;
+.menu-btn{
+  position: relative;
+  width: 200px;
+  height: 30px;
+  background-color: #123b37;
+  border-radius: 30px;
+  left: 37%;
+  margin-top: 20px;
+}
+.menu-btn .swiper-button-next{
+  color: #fff;
+}
+.menu-btn .swiper-button-next:after{
+  font-size: 20px;
+}
+.menu-btn .swiper-button-prev{
+  color: #fff;
+}
+.menu-btn .swiper-button-prev:after{
+  font-size: 20px;
 }
 /* 이벤트 */
-.event{
+.event {
   width: 100%;
+  height: 750px;
   margin: 0 auto;
   background-color: #f5f5f5;
 }
-.event-title{
+.event-title {
   width: 100%;
   font-size: 80px;
   font-weight: 900;
-  padding:100px 0 60px 0;
+  padding: 100px 0 60px 0;
 }
-.event-banner{
+.event-banner {
   display: flex;
   justify-content: space-between;
   margin: 0 100px 0 100px;
+}
+/* 스토어 */
+.store {
+  width: 100%;
+  height: 750px;
+  margin: 0 auto;
+}
+.store-title {
+  font-size: 80px;
+  font-weight: 900;
+  padding: 100px 0 60px 0;
+}
+.store-img {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 100px;
+}
+.store-img .gm {
+  background: url("../images/main_img/load_view1.png") no-repeat;
+  width: 350px;
+  height: 350px;
+  cursor: pointer;
+}
+.gm-back {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+}
+.gm:hover .gm-back{
+  opacity: 1;
+  transition: all 0.3s;
+}
+.gm-back > p {
+  position: relative;
+  top: 35%;
+}
+.gm-back > p::after {
+  content: "";
+  width: 200%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  display: block;
+  text-align: center;
+  left: -50px;
+  margin-top: 20px;
+}
+.store .store-img .gc {
+  background: url("../images/main_img/load_view2.png") no-repeat;
+  width: 350px;
+  height: 350px;
+  cursor: pointer;
+}
+.gc:hover .gc-back{
+  opacity: 1;
+  transition: all 0.3s;
+}
+.gc-back {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+}
+.gc-back > p {
+  position: relative;
+  top: 35%;
+}
+.gc-back > p::after{
+  content: "";
+  width: 200%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  display: block;
+  text-align: center;
+  left: -50px;
+  margin-top:20px;
+}
+.gs-back {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+}
+.gs:hover .gs-back{
+  opacity: 1;
+  transition: all 0.3s;
+}
+.gs-back > p {
+  position: relative;
+  top: 35%;
+}
+.gs-back > p::after {
+  content: "";
+  width: 200%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  display: block;
+  text-align: center;
+  left: -50px;
+  margin-top: 20px;
+}
+.store-img .gs {
+  background: url("../images/main_img/load_view3.png") no-repeat;
+  width: 350px;
+  height: 350px;
+  cursor: pointer;
+}
+/* 딜리버리 */
+.delivery{
+  width: 100%;
+  height: 500px;
+  background-color: #40ada3;
+  font-size: 12px;
+}
+.delivery .inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  font-size: 2.8em;
+}
+.deli-txt {
+  position: relative;
+  display: block;
+  color: #fff;
+  top: -20px;
+}
+.deli-txt h1 {
+  font-size: 0.9em;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+.deli-txt span {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+.deli-txt p {
+  font-size: 0.8em;
+  font-weight: 100;
+}
+.deli-txt a {
+  position: absolute;
+  display: block;
+  margin-top: 50px;
+  width: 150px;
+  height: 30px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-size: 0.6em;
+  text-align: center;
+}
+.deli-img img{
+  width: 450px;
+  height: 450px;
+}
+/* 푸터 */
+.footer{
+  width: 100%;
+  height: 200px;
+  background-color: #2a2a2a;
+}
+.footer .inner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  line-height: 30px;
+  font-size: 15px;
+  color: #fff;
 }
