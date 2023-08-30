@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  // AOS
+  AOS.init();
   // 비주얼 스와이퍼
   const visSwiper = new Swiper(".visualSwiper", {
     spaceBetween: 0,
@@ -145,7 +147,6 @@ $(document).ready(function () {
       .on("click", "#tab-story3", function () {
         $("#tabpanel-1").hide();
         $("#tabpanel-2").hide();
-
         if (swiperMainStory3 != undefined) {
           swiperMainStory3.destroy();
           $("#tabpanel-3").hide();
