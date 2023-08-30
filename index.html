@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" href="images/main_img/f" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="images/main_img/favicon.ico"
+      type="image/x-icon"
+    />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
@@ -43,25 +47,29 @@
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://www.twosome.co.kr/resources/js/jquery.min.js"></script>
+    <script src="https://www.twosome.co.kr/resources/js/swiper.min.js"></script>
     <script src="js/mainpage.js"></script>
+    <script src="js/common.js"></script>
     <script
       src="https://kit.fontawesome.com/706ff96991.js"
       crossorigin="anonymous"
     ></script>
     <!-- CSS -->
     <link rel="stylesheet" href="css/mainpage.css" />
+    <link rel="stylesheet" href="css/common.css">
   </head>
   <body>
     <div class="wrap">
       <!-- 사이드버튼 -->
-      <div class="side-btn">
+      <section class="side-btn">
         <div class="side-up">
           <i class="fa-solid fa-angle-up" style="color: #000000"></i>
         </div>
         <div class="side-down">
           <i class="fa-solid fa-angle-down" style="color: #000000"></i>
         </div>
-      </div>
+      </section>
       <!-- 상단 -->
       <header class="header">
         <div class="inner">
@@ -134,85 +142,185 @@
         </div>
       </section>
       <!-- 메뉴 -->
-      <section class="menu">
-        <div class="inner">
-          <h1 class="menu-title">DULLY COFFEE</h1>
-          <!-- 왼쪽 영역 -->
-          <div class="menu-left">
-            <ul>
-              <li class="tab1">COFFEE STORY</li>
-              <li class="tab2">DESERT STORY</li>
-              <li class="tab3">BEVERAGE</li>
-            </ul>
-          </div>
-          <!-- 오른쪽영역 -->
-          <div class="menu-right">
-            <!-- 첫번째 슬라이드 -->
-            <div class="swiper swiper-menu-1">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide on">
-                  <img src="images/main_img/coffee5.jpg" alt="" />
-                </div>
-                <div class="swiper-slide on">
-                  <img src="images/main_img/coffee2.jpg" alt="" />
-                </div>
-                <div class="swiper-slide on">
-                  <img src="images/main_img/coffee3.jpg" alt="" />
-                </div>
-                <div class="swiper-slide on">
-                  <img src="images/main_img/coffee4.jpg" alt="" />
+      <section class="menu-story section">
+        <div class="container">
+          <div class="container">
+            <h1 class="main-title">DULLY STORY</h1>
+            <!-- S : 탭 NAV  -->
+            <div class="tabs">
+              <ul role="tablist" aria-label="Tabs">
+                <li class="is-active">
+                  <button id="tab-story1" type="button" class="tab">
+                    <em class="main-text"
+                      >전문가의 섬세함으로 완성한 최상의 커피</em
+                    >
+                    <strong class="main-subtitle">COFFEE STORY</strong>
+                  </button>
+                </li>
+                <li>
+                  <button id="tab-story2" type="button" class="tab">
+                    <em class="main-text"
+                      >다양한 프리미엄 케이크 &amp; 디저트</em
+                    >
+                    <strong class="main-subtitle">DESSERT STORY</strong>
+                  </button>
+                </li>
+                <li>
+                  <button id="tab-story3" type="button" class="tab">
+                    <em class="main-text">맛과 향의 환상, 음료의 세계로</em>
+                    <strong class="main-subtitle">BEVRAGE STORY</strong>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <!-- E : 탭 NAV  -->
+            <!-- S : COFFEE STORY -->
+            <div id="tabpanel-1" class="tabpanel is-active">
+              <div class="tabpanel-header is-mobile-show">
+                <em class="main-text"
+                  >전문가의 섬세함으로 완성한 최상의 커피</em
+                >
+                <strong class="main-subtitle">COFFEE STORY</strong>
+              </div>
+              <div class="tabpanel-body">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <a href="/mn/coffeeStory.do">
+                        <img src="images/main_img/coffee2.jpg" alt="롱블랙" />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="/mn/coffeeStory.do">
+                        <img
+                          src="images/main_img/coffee3.jpg"
+                          alt="TWG 1837 블랙티"
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="/mn/coffeeStory.do">
+                        <img
+                          src="images/main_img/coffee4.jpg"
+                          alt="스트로베리 피치 프라페"
+                        />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="menu-btn">
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination-wrap">
+                <button class="swiper-button-prev">이전</button>
+                <button class="swiper-button-next">다음</button>
+                <div class="swiper-pagination"></div>
               </div>
             </div>
-            <!--// 첫번째 슬라이드 -->
-            <!-- 두번째 슬라이드 -->
-            <div class="swiper swiper-menu-2">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide on">
-                  <img src="images/main_img/dessert1.jpg" alt="" />
-                </div>
-                <div class="swiper-slide on">
-                  <img src="images/main_img/dessert2.jpg" alt="" />
-                </div>
-                <div class="swiper-slide on">
-                  <img src="images/main_img/dessert3.png" alt="" />
-                </div>
-                <div class="swiper-slide on">
-                  <img src="images/main_img/dessert4.jpg" alt="" />
+            <div id="tabpanel-2" class="tabpanel">
+              <div class="tabpanel-header is-mobile-show">
+                <em class="main-text">다양한 프리미엄 케이크 &amp; 디저트</em>
+                <strong class="main-subtitle">DESSERT STORY</strong>
+              </div>
+              <div class="tabpanel-body">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <a href="/mn/dessertStory.do">
+                        <img
+                          src="images/main_img/dessert1.jpg"
+                          alt="스트로베리 초콜릿 생크림"
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="/mn/dessertStory.do">
+                        <img
+                          src="images/main_img/dessert2.jpg"
+                          alt="마스카포네 티라미수"
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="/mn/dessertStory.do">
+                        <img
+                          src="images/main_img/dessert3.png"
+                          alt="레드벨벳"
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="/mn/dessertStory.do">
+                        <img
+                          src="images/main_img/dessert4.jpg"
+                          alt="뉴욕 치즈 케이크"
+                        />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="menu-btn">
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination-wrap">
+                <button class="swiper-button-prev">이전</button>
+                <button class="swiper-button-next">다음</button>
+                <div class="swiper-pagination"></div>
               </div>
             </div>
-            <!--// 두번째 슬라이드 -->
-            <!-- 세번째 슬라이드 -->
-            <div class="swiper swiper-menu-3">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide on">
-                  <img src="images/main_img/bevrage1.png" alt="" />
-                </div>
-                <div class="swiper-slide on">
-                  <img src="images/main_img/bevrage2.jpg" alt="" />
-                </div>
-                <div class="swiper-slide on">
-                  <img src="images/main_img/bevrage3.jpg" alt="" />
-                </div>
-                <div class="swiper-slide on">
-                  <img src="images/main_img/bevrage4.png" alt="" />
+            <div id="tabpanel-3" class="tabpanel">
+              <div class="tabpanel-header is-mobile-show">
+                <em class="main-text">가볍게 즐기는 맛있는 식사, 델리</em>
+                <strong class="main-subtitle">BEVRAGE STORY</strong>
+              </div>
+              <div class="tabpanel-body">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <a href="/mn/deliStory.do">
+                        <img
+                          src="images/main_img/bevrage1.png"
+                          alt="호밀 B. E. L. T"
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="/mn/deliStory.do">
+                        <img
+                          src="images/main_img/bevrage2.jpg"
+                          alt="페스토 햄치즈 파니니"
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="/mn/deliStory.do">
+                        <img
+                          src="images/main_img/bevrage3.jpg"
+                          alt="# 베리 머치 에그"
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="/mn/deliStory.do">
+                        <img
+                          src="images/main_img/bevrage4.png"
+                          alt="그릴드 치킨 샐러드"
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="/mn/deliStory.do">
+                        <img
+                          src="images/main_img/bevrage5.png"
+                          alt="코코넛 카야 크루아상"
+                        />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="menu-btn">
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination-wrap">
+                <button class="swiper-button-prev">이전</button>
+                <button class="swiper-button-next">다음</button>
+                <div class="swiper-pagination"></div>
               </div>
             </div>
-            <!--// 세번째 슬라이드 -->
           </div>
         </div>
       </section>
@@ -257,7 +365,7 @@
             <a href="#">자세히 보기</a>
           </div>
           <div class="deli-img">
-            <img src="images/main_img/delivery.png" alt="">
+            <img src="images/main_img/delivery.png" alt="" />
           </div>
         </div>
       </section>
