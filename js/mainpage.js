@@ -1,15 +1,4 @@
 $(document).ready(function () {
-  // 메뉴바 색
-  $(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-    if (scroll > 1) {
-      $(".header").css("background", "#2b2b2b");
-      $(".nav ul li a").css("color", "#fff");
-    } else {
-      $(".header").css("background", "#fff");
-      $(".nav ul li a").css("color", "#000");
-    }
-  });
   // 비주얼 스와이퍼
   const visSwiper = new Swiper(".visualSwiper", {
     spaceBetween: 0,
@@ -30,125 +19,151 @@ $(document).ready(function () {
     },
   });
   // 메뉴 슬라이드
-  const menuSwiper = new Swiper(".swiper-menu-1", {
-    slidesPerView: 3,
-    centeredSlides: true,
-    autoplay: {
-      delay: 3500,
-    },
-    navigation: {
-      nextEl: ".swiper-menu-1 .swiper-button-next",
-      prevEl: ".swiper-menu-1 .swiper-button-prev",
-    },
-    loop: true,
-    observer: true,
-    observeParents: true,
+  $(function () {
+    // Menu Story
+    function swiperMenuStory(el) {
+      var swiperList = $(el + " .swiper-slide");
+      var swiperListFirst =
+        '<div class="swiper-slide">' +
+        $(el + " .swiper-slide:first-child").html() +
+        "</div>";
+      var swiperListLast =
+        '<div class="swiper-slide">' +
+        $(el + " .swiper-slide:last-child").html() +
+        "</div>";
+      var swiperListLength = swiperList.length;
+      var swiperObj = new Swiper(el + " .swiper-container", {
+        loop: true,
+        speed: 500,
+        simulateTouch: false,
+        paginationClickable: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        spaceBetween: 0,
+        navigation: {
+          nextEl: el + " .swiper-button-next",
+          prevEl: el + " .swiper-button-prev",
+        },
+        breakpoints: {
+          767: {
+            centeredSlides: false,
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+        },
+        on: {
+          init: function () {
+            $this = this;
+            if ($(el).find(".swiper-slide-active").length) {
+              setTimeout(function () {
+                thisAlt = $(el)
+                  .find(".swiper-slide-active")
+                  .find("img")
+                  .attr("alt");
+                $(el + " .swiper-pagination").text(thisAlt);
+              }, 10);
+            } else {
+              setTimeout(function () {
+                thisAlt = $(el)
+                  .find(".swiper-slide-duplicate-active")
+                  .find("img")
+                  .attr("alt");
+                $(el + " .swiper-pagination").text(thisAlt);
+              }, 10);
+            }
+          },
+          slideChange: function () {
+            $this = this;
+            if ($(el).find(".swiper-slide-active").length) {
+              setTimeout(function () {
+                thisAlt = $(el)
+                  .find(".swiper-slide-active")
+                  .find("img")
+                  .attr("alt");
+                $(el + " .swiper-pagination").text(thisAlt);
+              }, 10);
+            } else {
+              setTimeout(function () {
+                thisAlt = $(el)
+                  .find(".swiper-slide-duplicate-active")
+                  .find("img")
+                  .attr("alt");
+                $(el + " .swiper-pagination").text(thisAlt);
+              }, 10);
+            }
+          },
+        },
+      });
+      return swiperObj;
+    }
+    // Menu Story 슬라이드 이미지 리사이징 width 조정
+    var swiperMainStory1;
+    var swiperMainStory2;
+    var swiperMainStory3;
+
+    // Menu Story 스와이프 선언
+    swiperMainStory1 = swiperMenuStory("#tabpanel-1");
+    $(document)
+      .on("click", "#tab-story1", function () {
+        $("#tabpanel-2").hide();
+        $("#tabpanel-3").hide();
+
+        if (swiperMainStory1 != undefined) {
+          swiperMainStory1.destroy();
+          $("#tabpanel-1").hide();
+          setTimeout(function () {
+            $("#tabpanel-1").show();
+            swiperMainStory1 = swiperMenuStory("#tabpanel-1");
+          }, 10);
+        } else {
+          $("#tabpanel-1").hide();
+          setTimeout(function () {
+            $("#tabpanel-1").show();
+            swiperMainStory1 = swiperMenuStory("#tabpanel-1");
+          }, 10);
+        }
+      })
+      .on("click", "#tab-story2", function () {
+        $("#tabpanel-1").hide();
+        $("#tabpanel-3").hide();
+
+        if (swiperMainStory2 != undefined) {
+          swiperMainStory2.destroy();
+          $("#tabpanel-2").hide();
+          setTimeout(function () {
+            $("#tabpanel-2").show();
+            swiperMainStory2 = swiperMenuStory("#tabpanel-2");
+          }, 10);
+        } else {
+          $("#tabpanel-2").hide();
+          setTimeout(function () {
+            $("#tabpanel-2").show();
+            swiperMainStory2 = swiperMenuStory("#tabpanel-2");
+          }, 10);
+        }
+      })
+      .on("click", "#tab-story3", function () {
+        $("#tabpanel-1").hide();
+        $("#tabpanel-2").hide();
+
+        if (swiperMainStory3 != undefined) {
+          swiperMainStory3.destroy();
+          $("#tabpanel-3").hide();
+          setTimeout(function () {
+            $("#tabpanel-3").show();
+            swiperMainStory3 = swiperMenuStory("#tabpanel-3");
+          }, 10);
+        } else {
+          $("#tabpanel-3").hide();
+          setTimeout(function () {
+            $("#tabpanel-3").show();
+            swiperMainStory3 = swiperMenuStory("#tabpanel-3");
+          }, 10);
+        }
+      });
   });
-  const menuSwiper2 = new Swiper(".swiper-menu-2", {
-    slidesPerView: 3,
-    centeredSlides: true,
-    autoplay: {
-      delay: 3500,
-    },
-    navigation: {
-      nextEl: ".swiper-menu-2 .swiper-button-next",
-      prevEl: ".swiper-menu-2 .swiper-button-prev",
-    },
-    loop: true,
-    observer: true,
-    observeParents: true,
+  $(document).on("click", ".tabs .tab", function () {
+    $(this).parent("li").addClass("is-active");
+    $(this).parent("li").siblings("li").removeClass("is-active");
   });
-  const menuSwiper3 = new Swiper(".swiper-menu-3", {
-    slidesPerView: 3,
-    centeredSlides: true,
-    autoplay: {
-      delay: 3500,
-    },
-    navigation: {
-      nextEl: ".swiper-menu-3 .swiper-button-next",
-      prevEl: ".swiper-menu-3 .swiper-button-prev",
-    },
-    loop: true,
-    observer: true,
-    observeParents: true,
-  });
-  // 메뉴 탭 부분
-  $(".swiper-menu-2").css({ display: "none" });
-  $(".swiper-menu-3").css({ display: "none" });
-  $(".tab1").css({
-    color: "#000",
-    "font-weight": "700",
-    "text-decoration": "underline",
-  });
-  $(".menu-left .tab1").click(function () {
-    $(".swiper-menu-2").css({ display: "none" });
-    $(".swiper-menu-3").css({ display: "none" });
-    $(".swiper-menu-1").css({ display: "block" });
-    $(".tab1").css({
-      color: "#000",
-      "font-weight": "700",
-      "text-decoration": "underline",
-    });
-    $(".tab2").css({
-      color: "",
-      "font-weight": "",
-      "text-decoration": "",
-    });
-    $(".tab3").css({
-      color: "",
-      "font-weight": "",
-      "text-decoration": "",
-    });
-  });
-  $(".menu-left .tab2").click(function () {
-    $(".swiper-menu-2").css({ display: "block" });
-    $(".swiper-menu-3").css({ display: "none" });
-    $(".swiper-menu-1").css({ display: "none" });
-    $(".tab2").css({
-      color: "#000",
-      "font-weight": "700",
-      "text-decoration": "underline",
-    });
-    $(".tab1").css({
-      color: "",
-      "font-weight": "",
-      "text-decoration": "",
-    });
-    $(".tab3").css({
-      color: "",
-      "font-weight": "",
-      "text-decoration": "",
-    });
-  });
-  $(".menu-left .tab3").click(function () {
-    $(".swiper-menu-2").css({ display: "none" });
-    $(".swiper-menu-3").css({ display: "block" });
-    $(".swiper-menu-1").css({ display: "none" });
-    $(".tab3").css({
-      color: "#000",
-      "font-weight": "700",
-      "text-decoration": "underline",
-    });
-    $(".tab2").css({
-      color: "",
-      "font-weight": "",
-      "text-decoration": "",
-    });
-    $(".tab1").css({
-      color: "",
-      "font-weight": "",
-      "text-decoration": "",
-    });
-  });
-  // 사이드메뉴
-  // 버튼을 누르면 상단으로 이동
-  const $topBtn = document.querySelector(".side-up");
-  $topBtn.onclick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-  // 버튼을 누르면 하단으로 이동
-  const $bottomBtn = document.querySelector(".side-down");
-  $bottomBtn.onclick = () => {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-  };
 });
