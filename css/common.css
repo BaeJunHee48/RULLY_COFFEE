@@ -125,7 +125,7 @@ button {
 .nav ul > li > a {
   font-weight: 600;
   color: #000000;
-  font-size: 1.9em;
+  font-size: 1.5em;
   transition: color 0.2s;
 }
 .nav ul li::after {
