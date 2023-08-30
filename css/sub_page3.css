@@ -1,5 +1,3 @@
-@charset "utf-8";
-@import url("font.css");
 /* -------------------------------------- */
 .main-section {
   width: 1920px;
@@ -30,7 +28,7 @@
 .container {
   max-width: 1400px;
   width: 100%;
-  height: 1000px;
+  height: 2000px;
   padding: 0 20px;
   margin: 0 auto;
   /* background-color: antiquewhite; */
@@ -38,6 +36,7 @@
 /* 버튼 */
 .butten {
   width: 100%;
+  height: 150px;
   /* height: 100px; */
   /* background-color: #519735; */
   display: flex;
@@ -65,7 +64,7 @@
   height: 100px;
   transform: translate(12px, 10px);
 }
-#box p{
+#box p {
   text-align: center;
   font-size: 25px;
   padding-left: 20px;
@@ -77,30 +76,86 @@
 }
 .best1 {
   display: block;
-  width: 550px;
-  height: 550px;
-  background-color: #519735;
+  width: 600px;
+  height: 600px;
+  /* background-color: #519735; */
+  border: 1px solid #b0b0b0;
   float: left;
   /* margin-left: 50px; */
   margin: 50px;
+}
+.best1 img {
+  display: block;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+.best_text1 {
+  display: block;
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+  font-size: 10px;
+}
+.best_text_mid {
+  color: #b0b0b0;
 }
 .best2 {
   display: block;
   position: relative;
   width: 550px;
-  height: 300px;
-  background-color: aqua;
+  height: 280px;
+  /* background-color: aqua; */
+  border: 1px solid #b0b0b0;
   float: right;
   margin-top: 50px;
   margin-right: 50px;
+}
+.best2 img {
+  width: 200px;
+  margin-top: 50px;
+  margin-left: 50px;
+  padding-right: 50px;
+  display: block;
+  float: left;
+}
+.best_text2 {
+  display: block;
+  position: relative;
+  width: 400px;
+  margin-top: 50px;
+  margin-left: 50px;
+  font-size: 10px;
 }
 .best3 {
   display: block;
   position: relative;
   width: 550px;
-  height: 300px;
-  background-color: aqua;
+  height: 280px;
+  /* background-color: aqua; */
+  border: 1px solid #b0b0b0;
   float: right;
-  margin-top: 50px;
+  margin-top: 40px;
   margin-right: 50px;
+}
+.best3 img {
+  width: 200px;
+
+  margin-top: 50px;
+  margin-left: 50px;
+  padding-right: 50px;
+  display: block;
+  float: left;
+}
+.best_text3 {
+  display: block;
+  position: relative;
+  width: 400px;
+  margin-top: 50px;
+  margin-left: 50px;
+  font-size: 10px;
+}
+/* 판매 */
+.all_sale {
 }
