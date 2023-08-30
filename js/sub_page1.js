@@ -55,3 +55,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// 페이지 로딩시 메인사진 글자에 밑줄 효과
+document.addEventListener("DOMContentLoaded", function () {
+  const imageOverlay = document.querySelector(".image-overlay");
+  // 원하는 시간(밀리초) 만큼 지연
+  // setTimeout(function() {
+  //   imageOverlay.classList.add("loaded");
+  // }, 1000); // 1000밀리초 = 1초
+  imageOverlay.classList.add("loaded");
+});
