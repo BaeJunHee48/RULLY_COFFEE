@@ -1,5 +1,7 @@
 .sub_event {
   margin: 0 auto;
+  display: block;
+  position: relative;
 }
 .sub_event img {
   display: inline-block;
@@ -18,7 +20,7 @@
 .sub_title > h1 {
   position: relative;
   display: block;
-  margin-top: 50px;
+  margin-top: 150px;
   color: #519735;
   font-size: 48px;
   font-weight: bold;
@@ -34,4 +36,20 @@
   height: 55px;
   left: 0px;
   top: 6px;
+}
+/* 이벤트 응모 버튼 */
+.sub2_butten {
+  display: block;
+  position: absolute;
+  top: 98%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Pretendard-Regular";
+  background-color: #519735;
+  width: 350px;
+  padding: 25px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
 }
