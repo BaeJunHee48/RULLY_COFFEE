@@ -14,17 +14,16 @@
       crossorigin="anonymous"
     ></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/sub_page1.css" />
-    <link rel="stylesheet" href="css/common.css">
-    <!-- js -->
-    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/common.css" />
+   
     <!-- swiper  -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
      <!-- AOS.js -->
      <script
      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
@@ -39,9 +38,11 @@
      crossorigin="anonymous"
      referrerpolicy="no-referrer"
    />
+   <!-- js -->
+    <script src="js/common.js"></script>
   </head>
   <body>
-    <div class="wrap">
+    
       <!-- 상단 -->
       <header class="header">
         <div class="inner">
@@ -59,6 +60,7 @@
         </div>
       </header>
       <!-- 이 위까지 공통 -->
+
         <!-- 사이드버튼 -->
         <section class="side-btn">
           <div class="side-up">
@@ -71,10 +73,14 @@
       <!-- 여기서부터 내가 작성한 것 -->
       <!-- 메인 이미지 -->
       <div class="main-section">
-        <p>Our brand story</p>
-        <p>brand</p>
-        <p>Brand equipments and shop location</p>
+        <img src="images/sub_page_1_img/main.png" alt="">
+        <div class="image-overlay">
+          <p class="title1 container">Our brand story</p>
+          <p class="title2 container">Brand equipments and shop location</p>
+        </div>
       </div>
+       
+      
 
       <!--소개 -->
       <div class="container">
@@ -120,20 +126,25 @@
                 <p>프로파일 로스팅을 통한 전자동 시스템으로 배치 간 편차를 최소화하여 일률적인 향미를 재현합니다.</p>
             </div>
         </div>
-        <div class="equipment-img"></div>
+        <div class="equipment-img">
+          <img src="images/sub_page_1_img/equipment2.png" alt="장비1">
+        </div>
         </section>
 
         <!-- 장비소개 2 -->
-        <section class="equipment2">
-            <div class="equipment-img2"></div>
+        <section class="introduce">
+            <div class="introduce-img">
+              <img src="images/sub_page_1_img/equipment1.png" alt="장비2">
+            </div>
 
-            <div class="equipment-txt2">
-                <div class="equipment-txt2-detail">
+            <div class="introduce-txt">
+                <div class="equipment-txt-detail">
                     <p class="equipment-sb" data-aos="fade-up"
                     data-aos-duration="900"
                     data-offset="-500"
                     data-aos-delay="200">Bean Cart (Scaling raw coffee bean)
                     </p>
+
                     <div class="equipment-introduce"  data-aos="fade-up"
                     data-aos-duration="900"
                     data-offset="-500"
@@ -142,7 +153,8 @@
                 </div>
                 </div>
 
-                <div class="equipment-txt2-detail2">
+                <!-- <div class="equipment-txt2-detail"> -->
+                <div class="equipment-txt-detail">
                     <p class="equipment-sb" data-aos="fade-up"
                     data-aos-duration="900"
                     data-offset="-500"
@@ -161,14 +173,14 @@
         </section>
 
         <!-- 장비소개 3 -->
-        <section class="equipment3">
-            <div class="equipment-txt3">
+        <section class="equipment">
+            <div class="equipment-txt">
                 <p class="equipment-sb" data-aos="fade-up"
                 data-aos-duration="900"
                 data-offset="-500"
                 data-aos-delay="200">FPG-LT <span>자동 티백 및 드립백 포장기</span>
                 </p>
-                <div class="equipment-introduce3" data-aos="fade-up"
+                <div class="equipment-introduce" data-aos="fade-up"
                 data-aos-duration="900"
                 data-offset="-500"
                 data-aos-delay="300">
@@ -178,7 +190,9 @@
                 </div>
             </div>
 
-            <div class="equipment-img3"></div>
+            <div class="equipment-img">
+              <img src="images/sub_page_1_img/equipment3.jpg" alt="장비3">
+            </div>
         </section>
 
         <!-- 오시는 길 -->

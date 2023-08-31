@@ -4,33 +4,90 @@
 .main-section {
   width: 1920px;
   height: 600px;
-  background: url("../images/sub_page_1_img/main.png") no-repeat;
-  background-size: 100%;
+  position: relative;
+
+  margin: 0 auto;
 }
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none; /* 오버레이 영역은 이벤트를 받지 않도록 설정 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-section img {
+  height: auto;
+}
+/* 메인사진에 글자넣기 */
+
+.title1,
+.title2 {
+  color: #fff;
+}
+.title1 {
+  font-size: 28px;
+  font-weight: 300;
+  display: block;
+  position: absolute;
+  top: 195px;
+  left: 260px;
+}
+
+.title2 {
+  position: absolute;
+  display: block;
+  font-size: 48px;
+  font-weight: 500;
+  top: 250px;
+  left: 260px;
+}
+
+.title1::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 0;
+  height: 5px;
+  background-color: #519735;
+  top: 43px;
+  left: 20px;
+  transition: width 0.5s;
+}
+
+.image-overlay.loaded .title1::before {
+  width: 195px;
+}
+
+/*메인사진 아래  */
 .container {
   max-width: 1400px;
   width: 100%;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   margin: 0 auto;
 }
+
 /* 소개 section */
 .introduce {
   margin-top: 200px;
   display: flex;
-  height: 630px;
+  justify-content: space-between;
 }
+
 .introduce-img {
-  width: 49%;
-  /* height: 630px; */
-  /* background-size: cover; */
-  /* background-image: url("../images/sub_page_1_img/introduction.png"); */
-  /* background-position: center; */
+  width: 48%;
 }
 .introduce-img img {
   width: 100%;
 }
 .introduce-txt {
-  margin-left: 60px;
+  width: 48%;
 }
 
 .introduce-txt h1 {
@@ -56,8 +113,6 @@
 
 .introduce-txt-detail {
   margin-top: 60px;
-  width: 670px;
-  height: 630px;
 }
 
 .introduce-txt-detail p {
@@ -68,16 +123,76 @@
   margin-top: 30px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .introduce {
+    margin-top: 150px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+  .introduce-txt {
+    width: 100%;
+    max-width: 700px;
+  }
+  .introduce-txt-detail {
+    margin-top: 60px;
+    width: 100%;
+  }
+
+  .introduce-img {
+    width: 100%;
+    max-width: 700px;
+    justify-content: center;
+  }
+}
+
+/* 모바일 반응형 */
+@media all and (max-width: 767px) {
+  .introduce {
+    margin-top: 150px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .introduce-img {
+    width: 100%;
+    max-width: 500px;
+    justify-content: center;
+  }
+
+  .introduce-txt {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .introduce-txt h1 {
+    font-size: 38px;
+  }
+
+  .introduce-txt h1::before {
+    height: 41px;
+  }
+
+  .introduce-txt-detail p {
+    font-size: 20px;
+  }
+}
+
 /* 장비 소개 */
 .equipment {
   margin-top: 150px;
   display: flex;
-  height: 480px;
+  justify-content: space-between;
 }
 
 .equipment-txt {
-  width: 670px;
-  height: 480px;
+  width: 48%;
 }
 
 .equipment-title {
@@ -118,69 +233,92 @@
 }
 
 .equipment-img {
-  width: 670px;
-  height: 480px;
-  background-size: cover;
-  background-image: url("../images/sub_page_1_img/equipment2.png");
-  background-position: center;
-  margin-left: 60px;
+  width: 48%;
 }
 
-/* 장비소개2 */
-.equipment2 {
-  margin-top: 150px;
-  display: flex;
-  height: 480px;
+.equipment-img img {
+  width: 100%;
 }
 
-.equipment-img2 {
-  width: 670px;
-  height: 470px;
-  background-size: cover;
-  background-image: url("../images/sub_page_1_img/equipment1.png");
-  background-position: center;
-  margin: 0;
+/* 장비소개1 반응형 */
+/* 태블릿 */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .equipment {
+    margin-top: 150px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+  .equipment-txt {
+    width: 100%;
+    max-width: 700px;
+    order: 2;
+  }
+  .equipment-introduce {
+    margin-top: 60px;
+    width: 100%;
+  }
+
+  .equipment-img {
+    width: 100%;
+    max-width: 700px;
+    order: 1;
+  }
 }
 
-.equipment-txt2 {
-  width: 670px;
-  height: 470px;
-  margin-left: 60px;
+@media all and (max-width: 767px) {
+  .equipment {
+    margin-top: 150px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .equipment-img {
+    width: 100%;
+    max-width: 500px;
+    order: 1;
+  }
+
+  .equipment-txt {
+    width: 100%;
+    max-width: 500px;
+    order: 2;
+  }
+
+  .equipment-title {
+    font-size: 36px;
+  }
+
+  .equipment-title::before {
+    height: 40px;
+  }
+
+  .equipment-sb {
+    font-size: 25px;
+  }
+
+  .equipment-introduce p {
+    font-size: 18px;
+    width: 100%;
+  }
 }
+
+/* ===================================================== */
 
 /* 장비소개 3 */
-.equipment3 {
-  margin-top: 150px;
-  display: flex;
-  height: 435px;
-}
-
-.equipment-img3 {
-  width: 670px;
-  height: 435px;
-  background-size: cover;
-  background-image: url("../images/sub_page_1_img/equipment3.jpg");
-  background-position: center;
-  margin: 0 0 0 60px;
-}
 
 .equipment-sb span {
   font-family: "Noto Sans KR", "TTWanjudaedunsancheB", "sans-serif";
 }
 
-.equipment-txt3 {
-  width: 670px;
-  height: 435px;
-  margin: 0;
-}
-
-.equipment-introduce3 p {
-  color: #111;
-  padding: 10px 0;
-  font-size: 23px;
-  font-weight: 450;
-  margin-top: 30px;
-  /* word-break: none; */
+/* 장비소개 2 반응형 */
+@media all and (max-width: 767px) {
 }
 
 /* 오시는 길 */
@@ -249,6 +387,7 @@
   background-color: #fff;
   cursor: pointer;
   border-radius: 5px;
+  /*  */
 }
 
 .guide-box:first-child {
@@ -268,14 +407,6 @@
   background-color: #fff;
 }
 
-/* .guide-box:hover h6,
-.guide-box:hover p {
-  color: #fff;
-}
-.guide-box:hover h6::before {
-  background-color: #fff;
-} */
-
 .guide-box h6 {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 30px;
@@ -289,70 +420,109 @@
   content: "";
   position: absolute;
   background-color: #999;
-  width: 300px;
+  /* width: 300px; */
+  width: 60%;
   height: 1px;
-  left: 100%;
+  left: 94.3%;
+  /* left: 100%; */
   top: 85%;
   transform: translateX(-123%);
 }
 
 .guide-box p {
+  display: block;
   font-size: 20px;
   color: #555;
   text-align: center;
   padding: 10px;
 }
 
-@media all and (max-width: 1024px) {
-  .introduce {
-    margin-top: 150px;
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .guide-box {
+    margin-left: 20px;
+  }
+}
+@media screen and (min-width: 825px) and (max-width: 900px) {
+  .guide-box p {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 824px) {
+  .guide-box p {
+    font-size: 15px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .guide {
+    margin-top: 200px;
+    margin: 0 30px;
+  }
+  .guide-img {
     flex-wrap: wrap;
+    width: 100%;
     height: auto;
+    display: flex;
+    margin: 0 auto;
+  }
+  .map-img {
+    width: 100%; /* 너비를 100%로 설정 */
+    height: auto;
+    /* 이미지의 원래 비율 유지 */
+    padding-top: 50%; /* 높이를 너비의 25%로 설정 (4:1 비율) */
+    position: relative; /* 내부 요소의 위치 설정을 위해 */
+    margin: 0 auto;
+  }
+  .main-img {
+    width: 100%; /* 너비를 100%로 설정 */
+    height: auto;
+    /* 이미지의 원래 비율 유지 */
+    padding-top: 50%; /* 높이를 너비의 25%로 설정 (4:1 비율) */
+    position: relative; /* 내부 요소의 위치 설정을 위해 */
+    margin: 10px auto;
+  }
+  .guide h1 {
+    font-size: 38px;
   }
 
-  .introduce-img {
-    width: 100%;
-    max-width: 500px;
-    justify-content: center;
+  .guide h1::before {
+    height: 41px;
   }
 
-  .introduce-txt {
-    width: 100%;
-    margin-left: 60px;
+  .guide-txt {
+    margin-top: 20px;
   }
 
-  .introduce-txt h1 {
-    position: relative;
+  .guide h1 {
+    margin-bottom: 50px;
+  }
+
+  .guide-box {
+    height: 100px;
+    margin-left: 10px;
+  }
+
+  .guide-box p {
+    display: none;
+  }
+
+  .guide-box h6 {
+    font-size: 25px;
+    line-height: 100px;
     display: block;
-    margin-top: 50px;
-    color: #519735;
-    font-size: 48px;
-    font-weight: bold;
-    font-family: "Pretendard-Regular";
-    padding-left: 20px;
   }
 
-  .introduce-txt h1::before {
-    content: "";
-    position: absolute;
-    background-color: #519735;
-    width: 6px;
-    height: 55px;
-    left: 0px;
-    top: 6px;
+  .guide-box h6::before {
+    display: none;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .guide {
+    margin-top: 150px;
   }
 
-  .introduce-txt-detail {
-    margin-top: 60px;
-    width: 670px;
-    height: 630px;
-  }
-
-  .introduce-txt-detail p {
-    color: #111;
-    padding: 10px 0 0 0;
-    font-size: 23px;
-    font-weight: 450;
-    margin-top: 30px;
+  .guide-box h6 {
+    font-size: 18px;
   }
 }
