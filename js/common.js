@@ -3,7 +3,7 @@ $(document).ready(function(){
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
     if (scroll > 1) {
-      $(".header").css("background", "#2b2b2b");
+      $(".header").css("background", "rgba(0,0,0,0.7");
       $(".nav ul li a").css("color", "#fff");
     } else {
       $(".header").css("background", "#fff");
